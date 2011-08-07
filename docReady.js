@@ -22,6 +22,11 @@ function DocReady(func){
 
 DocReady.prototype.init = function(){
 	this.ran = false;
+	//ensure that we have soemthing to bind
+	if(typeof(this.readyFunctions) != 'function'){
+	  this.readyFunctions = function(){};
+	}
+		
 	var runFunc = bind(this, this.readyFunctions);
 
 	if(document.addEventListener){ //Moz or Opera
