@@ -58,3 +58,5 @@ DocReady.prototype.add = function(func){
 	}
 };
 
+//create an instance
+window.dR = new DocReady();
