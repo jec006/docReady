@@ -8,8 +8,12 @@
  *  otherwise the function will be added to a queue a functions and will be run in order
  *  when the DOM Ready event is fired
  * 
- *  @requires - utils.js
  */
+
+//utility function to bind a function to an object instance
+var bind = function(o, f){
+	return function() { return f.apply(o, arguments); };
+};
 
 function DocReady(func){
 	this.init();
